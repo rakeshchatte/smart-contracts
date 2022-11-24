@@ -53,7 +53,7 @@ contract Ecommerce {
     function delivery(uint256 _product_id) public {
         require(
             allProducts[_product_id - 1].buyer == msg.sender,
-            "Only can buyer confirm it"
+            "Only buyer can confirm"
         );
         allProducts[_product_id-1].delivered = true;
         allProducts[_product_id-1].seller.transfer(
